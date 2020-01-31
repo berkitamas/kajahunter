@@ -1,0 +1,67 @@
+body {
+    background-color: #fff;
+}
+
+header {
+    position: absolute;
+}
+
+header::before {
+    display: none;
+}
+
+nav {
+    display: none
+}
+
+footer {
+    display: none;
+}
+
+main {
+}
+
+#landing-overlay {
+    display: none;
+}
+
+.card {
+    padding-bottom: 20px;
+}
+
+.card .cover {
+    background-image: none !important;
+    height: 50px;
+}
+
+.card .cover .title {
+    height: 50px;
+    line-height: 50px;
+    display: block;
+    padding: 0 10px;
+}
+
+.card .cover .title::before {
+    display: none;
+}
+
+.card .view {
+    display: none;
+}
+
+#restaurants  th:last-child {
+    display: none;
+}
+
+#restaurants .menu {
+    display: none;
+}
+
+#restaurant-details-overlay {
+    height: 80px;
+    background-image: none !important;
+}
+
+#restaurant-details-wrapper table .meal-basket {
+    display: none;
+}

@@ -1,0 +1,35 @@
+        /*
+        */
+        //$kecske = CategoryDAOImpl::getInstance();
+        /*$delete = $kecske->create(new Category(1, "Kecske"));
+        $update = $kecske->create(new Category(1, "Kecske"));
+        $kecske->create(new Category(1, "K|ecske"));
+        $kecske->update($update, new Category(30, "Macska"));
+        $kecske->delete($delete);*/
+        /*$where = new WhereClause();
+        $order = new OrderByClause();
+        $order->addElement("name", "ASC");
+        $order->addElement("id", "DESC");
+        var_dump($kecske->list($order));*/
+        /*$order = OrderDAOImpl::getInstance();
+        $order->create(new Order(2, 1, 1, false,
+            [
+                [
+                    "name" => "Hegyi Macska",
+                    "quantity" => 0,
+                    "price" => "12341.123"
+                ],
+                [
+                    "name" => "Hegyi Macska",
+                    "quantity" => 0,
+                    "price" => "12341.123"
+                ],
+                [
+                    "name" => "Hegyi Macska",
+                    "quantity" => 0,
+                    "price" => "12341.123"
+                ]
+            ], 123456, 0, "20.1"));*/
+
+        $restaurant = RestaurantDAOImpl::getInstance();
+        /*$restaurant->create(new Restaurant("Macskás étterem", "asd@asd.com", "FDSGZTH", false, "sdfsdfsd", "", "+36305643723", "6725", "Szeged", "Valami utca", "24", "", "", "török", 20, 30, "20-22 nap"));*/

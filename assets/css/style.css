@@ -1,0 +1,1681 @@
+@import url('https://fonts.googleapis.com/css?family=Niconne|Roboto:100,300,400,700');
+
+/* -------- GLOBAL -------- */
+
+*, *::after, *::before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+body {
+    font-family: "Roboto", Arial, sans-serif;
+    background-color: rgba(255, 221, 151, 0.53);
+}
+
+.wrapper {
+    max-width: 1050px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+}
+
+.font-light {
+    font-weight: 300;
+}
+
+.vabottom::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    vertical-align: bottom;
+}
+
+.vabottom {
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+.darker {
+    background-color: rgba(0,0,0,.5);
+    height: 100%;
+    width: 100%;
+}
+
+.clear {
+    clear: both;
+}
+
+
+/* CONTAINER */
+
+#container {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 300px;
+}
+
+/* -------- HEADER -------- */
+
+header {
+    background-color: #FFFFFF;
+    color: #b71540;
+    height: 70px;
+    width: 100%;
+    top:0;
+    z-index: 10;
+    position: fixed;
+}
+
+header::before {
+    content: '';
+    background:url("../img/triangle.svg") center;
+    display: block;
+    height: 10px;
+    width: 100%;
+    position: absolute;
+    top: 70px;
+}
+
+
+#page-title {
+    float: left;
+    cursor: pointer;
+}
+
+#page-title .logo {
+    float: left;
+}
+
+#page-title h1 {
+    font-weight: normal;
+    font-size: 2em;
+    line-height: 70px;
+    margin: 0;
+    float: left;
+}
+
+#page-title .logo {
+    height: 70px;
+    padding: 10px 0;
+    margin-right: 15px;
+}
+
+#page-title .logo img {
+    height: 50px;
+    width: 50px;
+}
+
+#page-title h1 {
+    font-family: "Niconne", "Times New Roman", serif;
+}
+
+#menubutton {
+    display: none;
+}
+
+/* -------- NAVIGATION -------- */
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    float: right;
+}
+
+nav ul li {
+    float: left;
+    padding: 15px 15px 10px;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    position: relative;
+    height: 5px;
+    width: 0;
+    background-color: #f31a52;
+    transition: width .3s, background-color .3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:active::after {
+    width: 100%;
+    background-color: #6a0625;
+}
+
+nav a {
+    display: inline-block;
+    color: #b71540;
+    text-decoration: none;
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: .8em;
+    letter-spacing: 1px;
+    line-height: 40px;
+    transition: color .3s;
+}
+
+nav a:hover {
+    color: #f31a52;
+}
+
+nav a:active {
+    color: #6a0625;
+}
+
+@media screen and (max-width: 600px) {
+    header::before {
+        display: none;
+    }
+
+    header {
+        height: 50px;
+    }
+
+    #page-title h1 {
+        font-weight: 300;
+        text-transform: uppercase;
+        font-family: "Roboto", Arial, sans-serif;
+        font-size: .8em;
+        letter-spacing: 1px;
+        line-height: 50px;
+    }
+
+    #page-title .logo {
+        height: 50px;
+        width: 45px;
+        padding: 9px 0;
+        margin: 0;
+    }
+
+    #page-title .logo img {
+        height: 32px;
+        width: 32px;
+    }
+
+    #menubutton {
+        position: fixed;
+        z-index: 10;
+        top: 10px;
+        right: 10px;
+
+        display: block;
+
+        width: 40px;
+        height: 30px;
+
+        cursor: pointer;
+        transition: color .3s, background-color .3s, border-color .3s;
+
+        border: 1px solid #b71540;
+        border-radius: 5px;
+    }
+
+    #menubutton i {
+        font-size: 1.3em;
+        line-height: 30px;
+
+        width: 100%;
+        height: 100%;
+
+        text-align: center;
+    }
+
+    #menubutton:hover {
+        color: #fff;
+        background-color: #f31a52;
+        border-color: #f31a52;
+    }
+
+    #menubutton:active {
+        color: #fff;
+        border-color: #6a0625;
+        background-color: #6a0625;
+    }
+
+    nav.mobileshow > .wrapper > ul {
+        transform: translateX(0%);
+    }
+
+    nav > .wrapper > ul {
+        position: fixed;
+        z-index: 5;
+
+        overflow-x: hidden;
+        overflow-y: auto;
+
+        width: 61.8%;
+        height: 100%;
+
+        transition: transform .3s;
+        transform: translateX(-100%);
+
+        background-color: #333;
+        left: 0;
+        top: 50px;
+    }
+
+
+    nav > .wrapper > ul > li {
+        display: block;
+
+        height: 50px;
+
+        float: none;
+        padding: 0px;
+
+        color: #fff;
+    }
+
+    nav > .wrapper > ul > li>a {
+        width: 100%;
+
+        padding: 0px 10px;
+
+        line-height: 50px;
+
+        color: #aaa;
+
+        transition: background-color .3s;
+
+        background-color: transparent;
+    }
+
+    nav > .wrapper > ul > li>a:after {
+        display: none;
+    }
+
+    nav > .wrapper > ul > li > a:hover {
+        color: #fff;
+        background-color: #f31a52;
+    }
+
+    nav > .wrapper > ul > li > a:active {
+        color: #fff;
+        background-color: #6a0625;
+    }
+
+    nav.mobileshow .frame {
+        visibility: visible;
+
+        background: rgba(0,0,0,.5);
+    }
+
+    nav .frame {
+        position: fixed;
+        top: 50px;
+        left: 0;
+
+        visibility: hidden;
+
+        width: 100%;
+        height: 100%;
+
+        transition: background .3s, visibility .3s;
+
+        background: transparent;
+    }
+}
+
+/* CONTENT */
+main {
+    display: inline-block;
+    position: relative;
+    margin-top: 70px;
+    width: 100%;
+}
+
+.overlay-image {
+    height: 400px;
+    width: 100%;
+    background-position: bottom center;
+    background-size: cover;
+}
+
+.overlay-image h2 {
+    margin: 0;
+    line-height: 80px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 160px 0;
+    text-align: center;
+    color: #FFFFFF;
+    font-family: "Niconne", "Times New Roman", serif;
+    font-weight: 400;
+    font-size: 3.3em;
+}
+
+.card {
+    display: inline-block;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    max-width: 300px;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .3)
+}
+
+.card .cover {
+    height: 150px;
+    background-position: bottom center;
+    background-size: cover;
+}
+
+.card .cover .title::before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height:100%;
+    vertical-align:bottom;
+}
+
+.card .cover .title {
+    display: inline-block;
+    margin: 0;
+    padding: 10px;
+    height: 150px;
+    color: #FFFFFF;
+    background-color: rgba(0, 0, 0, .5);
+    width: 100%;
+    position: relative;
+    font-size: 1.4em;
+    font-weight: 300;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.card .desc {
+    margin: 0;
+    padding: 10px;
+    font-weight: 300;
+    background-color: #FFFFFF;
+    height: 120px;
+}
+
+.card .desc ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.card .desc ul li {
+    line-height: 30px;
+}
+
+.card .desc ul li i {
+    margin-right: 10px;
+}
+
+.card .view {
+    padding: 20px 10px 10px 10px;
+    background-color: #FFFFFF;
+}
+
+.button-view::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    background-color: #f31a52;
+    transition: width .3s, background-color .3s;
+}
+
+.button-view::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left:100%;
+    margin-left: -20px;
+    z-index: 2;
+    border-style: solid;
+    border-width: 25px 20px;
+    border-color: #FFFFFF #FFFFFF #FFFFFF transparent;
+}
+
+.button-view:hover::before {
+    width: 100%;
+}
+
+.button-view:active::before {
+    width: 100%;
+    background-color: #6a0625;
+}
+
+.button-view {
+    position: relative;
+    display: inline-block;
+    height: 50px;
+    line-height: 50px;
+    width: 100%;
+    text-decoration: none;
+    color: #b71540;
+    border-radius: 3px;
+    overflow: hidden;
+    transition: color .3s;
+}
+
+.button-view span {
+    position: absolute;
+    z-index: 1;
+    left: 15px;
+}
+
+.button-view:hover {
+    color: #FFFFFF;
+}
+
+@media screen and (max-width: 600px) {
+    main {
+        margin-top: 50px;
+    }
+
+    .card {
+        margin-right: 0;
+        width: 100%;
+        max-width: initial;
+    }
+}
+
+/* FOOTER */
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    border-top: 10px solid #FFFFFF;
+    height: 300px;
+    background-color: #333333;
+    color: #FFFFFF;
+}
+
+footer .copyright {
+    background-color: #FFFFFF;
+    margin:0;
+    height: 50px;
+    line-height: 50px;
+    font-weight: 300;
+    color: #333333;
+}
+
+footer .box {
+    height: 240px;
+}
+
+footer .wrapper {
+    padding: 0 10px;
+}
+
+footer .box .wrapper>div {
+    float: left;
+}
+
+footer .facebook {
+    width: 60%;
+    height: 240px;
+}
+
+footer .facebook .inner {
+    position: relative;
+    height: 240px;
+    max-width: 400px;
+    padding: 60px 0;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+footer .links {
+    width: 40%;
+    height: 240px;
+}
+
+footer .links ul {
+    display: inline-block;
+    padding: 0;
+    width: 100%;
+    list-style: none;
+}
+
+
+footer .links a {
+    display: inline-block;
+    text-decoration: none;
+    color: #FFFFFF;
+    line-height: 50px;
+    width: 100%;
+    padding: 0 20px;
+    transition: color .3s, background-color .3s;
+}
+
+footer .links a:hover {
+    background-color: #f31a52;
+}
+
+footer .links a:active {
+    background-color: #6a0625;
+}
+
+@media screen and (max-width: 768px) {
+    #container {
+        padding-bottom: 410px;
+    }
+    footer {
+        height: 410px;
+    }
+    footer .box {
+        height: 350px;
+    }
+    footer .box .wrapper>div {
+        float: none;
+        width: 100%;
+    }
+    footer .facebook {
+        height: 200px;
+    }
+
+    footer .facebook .inner {
+        height: 200px;
+        padding: 35px 0;
+    }
+    footer .links {
+        height: 100px;
+    }
+    footer .links ul {
+        margin: 0 0 50px;
+    }
+}
+
+/* LANDING PAGE */
+#landing-overlay {
+    background-image: url("../img/overlay-landing.png");
+}
+
+#landing-wrapper {
+    padding: 0 10px;
+}
+
+
+@media screen and (max-width: 600px) {
+    #landing-overlay {
+        display: none;
+    }
+}
+
+/* LOGIN PAGE */
+#loginpanel {
+    max-width: 500px;
+    margin: 30px auto;
+
+    border-radius: 3px;
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+}
+
+#loginpanel .notice {
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #eb2f06;
+}
+
+#loginpanel .notice.green {
+    background-color: #78e08f;
+}
+
+#loginpanel .notice a {
+    font-size: 1em;
+
+    color: #fff;
+}
+
+#loginpanel h2 {
+    font-size: 1.3em;
+    font-weight: 300;
+
+    margin: 0;
+    padding: 20px 20px 10px;
+
+    text-transform: uppercase;
+
+    color: #000;
+}
+
+#loginpanel .fields {
+    padding: 10px 20px 20px;
+
+    text-align: left;
+}
+
+#loginpanel .fields input {
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+#loginpanel .field {
+    position: relative;
+}
+
+#loginpanel .icon {
+    position: relative;
+    z-index: 1;
+
+    overflow: hidden;
+
+    width: 45px;
+    height: 40px;
+    margin: 10px 0;
+
+    transition: border-color .3s;
+
+    border: 2px solid #ecf0f1;
+    border-right: none;
+    border-radius: 3px 0 0 3px;
+    background-color: #ecf0f1;
+}
+
+#loginpanel .icon.focus {
+    border-color: #b71540 transparent #b71540 #b71540;
+}
+
+#loginpanel .icon i {
+    line-height: 35px;
+
+    width: 100%;
+    height: 35px;
+
+    text-align: center;
+
+    color: #555;
+}
+
+#loginpanel input[type=email], #loginpanel input[type=text], #loginpanel input[type=password] {
+    font-size: .8em;
+    line-height: 40px;
+
+    position: absolute;
+    z-index: 0;
+    top: -10px;
+
+    height: 40px;
+    padding-left: 55px;
+
+    transition: border-color .3s;
+
+    border: 2px solid #ecf0f1;
+    border-left: none;
+    border-radius: 3px;
+    outline: none;
+    background: white;
+
+    -webkit-appearance: none;
+}
+
+#loginpanel input[type=email]:focus, #loginpanel input[type=text]:focus, #loginpanel input[type=password]:focus {
+    border-color: #b71540;
+}
+
+#loginpanel input[type=checkbox] {
+    width: 0;
+    height: 0;
+    margin: 0;
+
+    opacity: 0;
+}
+
+#loginpanel input[type=checkbox] + label {
+    font-size: .8em;
+    line-height: 30px;
+
+    display: inline-block;
+
+    margin-bottom: 10px;
+    padding-right: 10px;
+
+    cursor: pointer;
+    transition: color .3s;
+
+    color: #95a5a6;
+}
+
+#loginpanel input[type=checkbox] + label:hover, #loginpanel input[type=checkbox]:focus + label {
+    color: #f31a52;
+}
+
+#loginpanel input[type=checkbox] + label:active {
+    color: #6a0625;
+}
+
+#loginpanel input[type=checkbox] + label span {
+    position: relative;
+
+    display: inline-block;
+
+    width: 17px;
+    height: 17px;
+    margin: -1px 8px 0 0;
+
+    cursor: pointer;
+    transition: border-color .3s;
+    vertical-align: -4px;
+
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#loginpanel input[type=checkbox] + label span i {
+    font-size: .5em;
+    line-height: 16px;
+
+    position: absolute;
+
+    display: inline-block;
+
+    width: 16px;
+    height: 16px;
+
+    transition: opacity .3s, font-size .3s;
+    text-align: center;
+
+    opacity: 0;
+}
+
+#loginpanel input[type=checkbox]:checked + label span i {
+    font-size: .9em;
+
+    opacity: 1;
+}
+
+#loginpanel input[type=checkbox] + label:hover span, #loginpanel input[type=checkbox]:focus + label span {
+    border-color: #f31a52;
+}
+
+#loginpanel input[type=checkbox] + label:active span {
+    border-color: #6a0625;
+}
+
+
+#loginpanel input[type=submit] {
+    font-size: .8em;
+    line-height: 40px;
+
+    width: 100%;
+    height: 40px;
+    margin: 10px 0 0;
+    padding: 0;
+
+    cursor: pointer;
+    transition: background-color .3s;
+
+    color: #ecf0f1;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    background: #b71540;
+
+    -webkit-appearance: none;
+}
+
+#loginpanel input[type=submit]:hover, #loginpanel input[type=submit]:focus {
+    background-color: #f31a52;
+}
+
+#loginpanel input[type=submit]:active {
+    background-color: #6a0625;
+}
+
+#loginpanel a {
+    font-size: .8em;
+    line-height: 30px;
+
+    transition: color .3s;
+    text-decoration: none;
+
+    color: #95a5a6;
+}
+
+#loginpanel a:hover {
+    color: #f31a52;
+}
+
+#loginpanel a:active {
+    color: #6a0625;
+}
+
+@media screen and (max-width: 550px) {
+    #loginpanel {
+        margin: 20px 10px;
+    }
+}
+
+/* REGISTER */
+
+#registerpanel {
+    max-width: 500px;
+    margin: 30px auto;
+
+    background-color: #fff;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .3);
+}
+
+#registerpanel .notice {
+    padding: 10px 20px;
+
+    color: #fff;
+    background-color: #e74c3c;
+}
+
+#registerpanel .notice.green {
+    background-color: #2ecc71;
+}
+
+#registerpanel h2 {
+    font-size: 1.3em;
+    font-weight: 300;
+
+    margin: 0;
+    padding: 20px 20px 10px;
+
+    text-transform: uppercase;
+
+    color: #000;
+}
+
+#registerpanel ul.tab {
+    height: 30px;
+    margin: 20px 0;
+    padding: 0 10px;
+
+    list-style: none;
+
+    border-bottom: 1px solid #ccc;
+}
+
+#registerpanel ul.tab li {
+    font-size: .8em;
+    line-height: 30px;
+
+    float: left;
+
+    width: 50%;
+    height: 30px;
+
+    cursor: pointer;
+    transition: color .3s, background-color .3s, border-color .3s;
+    text-align: center;
+
+    color: #999;
+    border: 1px solid transparent;
+    border-bottom: none;
+}
+
+#registerpanel ul.tab li:hover {
+    color: #666;
+}
+
+#registerpanel ul.tab li:active {
+    color: #000;
+}
+
+#registerpanel ul.tab li.selected {
+    cursor: default;
+
+    color: #666;
+    border-color: #ccc;
+    border-bottom: none;
+    background-color: #fff;
+}
+
+#registerpanel ul.tab li.selected:active {
+    color: #666;
+}
+
+#registerpanel .fields {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 5px 15px 15px;
+
+    transition: height .3s;
+    white-space: nowrap;
+}
+
+#registerpanel .fields .person {
+    visibility: visible;
+
+    width: 100%;
+    max-height: 50000px;
+    padding: 0 20px;
+    white-space: normal;
+}
+
+#registerpanel .fields.switched .person {
+    visibility: hidden;
+
+    max-height: 0;
+    margin-left: -100%;
+}
+
+#registerpanel .fields .company {
+    visibility: hidden;
+    overflow: hidden;
+
+    width: 100%;
+    max-height: 0;
+    padding: 0 20px;
+
+    white-space: normal;
+}
+
+#registerpanel .fields .company, #registerpanel .fields .person {
+    padding-top: 5px;
+}
+
+#registerpanel .fields.switched .company {
+    visibility: visible;
+
+    max-height: 50000px;
+}
+
+#registerpanel .field {
+    display: inline-block;
+    clear: both;
+
+    width: 100%;
+}
+
+#registerpanel .field.required::before {
+    line-height: 40px;
+
+    float: left;
+
+    width: 20px;
+    height: 40px;
+    margin-left: -20px;
+
+    content: '*';
+    text-align: center;
+
+    color: #c0392b;
+}
+
+#registerpanel .placeholder {
+    font-size: .8em;
+    line-height: 40px;
+
+    position: relative;
+    z-index: 0;
+
+    display: inline-block;
+    float: left;
+    overflow: hidden;
+
+    width: 100%;
+    height: 40px;
+    margin-top: -45px;
+    padding: 0 7px;
+
+    transition: color .3s, font-size .3s, height .3s, line-height .3s, z-index .3s linear, margin-top .3s;
+    color: #a9a7a7;
+}
+
+#registerpanel .placeholder .text {
+    display: inline-block;
+    overflow: hidden;
+
+    max-width: 100%;
+    padding: 0 5px;
+
+    transition: background-color .3s;
+    text-overflow: ellipsis;
+
+    background-color: transparent;
+}
+
+#registerpanel .placeholder.active {
+    font-size: .7em;
+    line-height: 15px;
+
+    z-index: 2;
+
+    display: inline-block;
+
+    height: 15px;
+    margin-top: -51px;
+}
+
+#registerpanel .placeholder.active .text {
+    background-color: #fff;
+}
+
+#registerpanel .placeholder.active.focus {
+    color: #b71540;
+}
+
+#registerpanel .help {
+    font-size: .7em;
+
+    float: left;
+
+    margin-bottom: 10px;
+    margin-left: 12px;
+
+    color: #7f8c8d;
+}
+
+#registerpanel input[type=email], #registerpanel input[type=password], input[type=text], input[type=tel] {
+    font-size: .8em;
+
+    position: relative;
+    z-index: 1;
+
+    width: 100%;
+    height: 40px;
+    margin: 0 0 5px;
+    padding: 10px;
+
+    transition: border-color .3s;
+
+    border: 2px solid #ecf0f1;
+    border-radius: 3px;
+    outline: none;
+    background: transparent;
+    box-shadow: none;
+
+    -webkit-appearance: none;
+}
+
+#registerpanel input[type=email]:-webkit-autofill, #registerpanel input[type=password]:-webkit-autofill, input[type=text]:-webkit-autofill, input[type=tel]:-webkit-autofill {
+    color: #fff !important;
+    box-shadow: 0 0 0 100000px white inset;
+}
+
+#registerpanel input[type=email]:focus, #registerpanel input[type=password]:focus, input[type=text]:focus, input[type=tel]:focus {
+    border-color: #b71540;
+}
+
+#registerpanel input[type='checkbox'] {
+    width: 0;
+    height: 0;
+    margin: 0;
+
+    opacity: 0;
+}
+
+#registerpanel input[type='checkbox'] + label {
+    font-size: .8em;
+    line-height: 30px;
+
+    display: inline-block;
+
+    margin-bottom: 10px;
+    padding-right: 10px;
+
+    cursor: pointer;
+    transition: color .3s;
+
+    color: #95a5a6;
+}
+
+#registerpanel input[type='checkbox'] + label:hover, #registerpanel input[type='checkbox'] + label:hover a, #registerpanel input[type='checkbox']:focus + label, #registerpanel input[type='checkbox']:focus + label a {
+    color: #f31a52;
+}
+
+#registerpanel input[type='checkbox'] + label:active, #registerpanel input[type='checkbox'] + label:active a {
+    color: #6a0625;
+}
+
+#registerpanel input[type='checkbox'] + label span {
+    position: relative;
+
+    display: inline-block;
+
+    width: 17px;
+    height: 17px;
+    margin: -1px 8px 0 0;
+
+    cursor: pointer;
+    transition: border-color .3s;
+    vertical-align: middle;
+
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#registerpanel input[type='checkbox'] + label span i {
+    font-size: .5em;
+    line-height: 16px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: inline-block;
+
+    width: 16px;
+    height: 16px;
+
+    transition: opacity .3s, font-size .3s;
+    text-align: center;
+
+    opacity: 0;
+}
+
+#registerpanel input[type='checkbox'] + label a {
+    font-size: 1em;
+
+    transition: border-color .3s, color .3s;
+
+    border-bottom: 1px solid transparent;
+}
+
+#registerpanel input[type='checkbox'] + label a:hover {
+    border-color: #f31a52;
+}
+
+#registerpanel input[type='checkbox']:checked + label span i {
+    font-size: .9em;
+
+    opacity: 1;
+}
+
+#registerpanel input[type='checkbox'] + label:hover span, #registerpanel input[type='checkbox']:focus + label span {
+    border-color: #f31a52;
+}
+
+#registerpanel input[type='checkbox'] + label:active span {
+    border-color: #6a0625;
+}
+
+#registerpanel .field h3 {
+    font-size: 1em;
+    font-weight: normal;
+
+    margin: 20px 0 10px;
+
+    color: #7f8c8d;
+}
+
+#registerpanel .date {
+    float: left;
+}
+
+#registerpanel .date.year {
+    max-width: 60px;
+}
+
+#registerpanel .date.month {
+    width: calc(100% - 130px);
+    margin: 0 10px;
+}
+
+#registerpanel .date.month label.active {
+    margin-top: -54px;
+}
+
+#registerpanel .date.month .help {
+    margin-bottom: 0;
+}
+
+#registerpanel .date.month .select {
+    margin-bottom: 1px;
+}
+
+#registerpanel .date.day {
+    max-width: 50px;
+}
+
+#registerpanel .select {
+    font-size: .8em;
+
+    position: relative;
+    z-index: 1;
+
+    display: inline-block;
+    clear: both;
+
+    width: 100%;
+    height: 40px;
+    margin: 0 0 5px;
+    padding: 10px;
+
+    transition: border-color .3s;
+    text-align: left;
+
+    border: 2px solid #ecf0f1;
+    border-radius: 3px;
+    background: #fff;
+}
+
+#registerpanel .select.focus {
+    border-color: #f31a52;
+}
+
+#registerpanel select {
+    font-size: 1em;
+
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 36px;
+    padding: 0 10px;
+
+    cursor: pointer;
+
+    color: #a9a7a7;
+    border: none;
+    border-radius: 0;
+    outline: none;
+    background: transparent;
+
+    -webkit-appearance: none;
+}
+
+#registerpanel select.active {
+    color: #000;
+}
+
+#registerpanel select[disabled] {
+    cursor: default;
+}
+
+#registerpanel .selectarrow {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    width: 40px;
+    height: 36px;
+
+    transition: color .3s;
+    text-align: center;
+
+    color: #a9a7a7;
+}
+
+#registerpanel .selectarrow i {
+    line-height: 36px;
+
+    height: 36px;
+}
+
+#registerpanel .select.focus .selectarrow {
+    color: #f31a52;
+}
+
+#registerpanel input[type=submit] {
+    font-size: .8em;
+    line-height: 40px;
+
+    width: 100%;
+    height: 40px;
+    margin: 0;
+
+    cursor: pointer;
+    border-radius: 3px;
+    transition: background-color .3s;
+
+    color: #ecf0f1;
+    border: none;
+    outline: none;
+    background: #b71540;
+
+    -webkit-appearance: none;
+}
+
+#registerpanel input[type=submit]:hover, #registerpanel input[type=submit]:focus {
+    background-color: #f31a52;
+}
+
+#registerpanel input[type=submit]:active {
+    background-color: #6a0625;
+}
+
+#registerpanel .field .half {
+    float: left;
+
+    width: 50%;
+}
+
+#registerpanel .field .half:first-child {
+    padding-right: 10px;
+}
+
+#registerpanel .field .half:last-child {
+    padding-left: 10px;
+}
+
+#registerpanel a {
+    font-size: .8em;
+
+    transition: color .3s;
+    text-decoration: none;
+
+    color: #95a5a6;
+}
+
+#registerpanel a:hover {
+    color: #f31a52;
+}
+
+#registerpanel a:active {
+    color: #6a0625;
+}
+
+#registerpanel .sep {
+    margin: 20px 0;
+}
+
+@media screen and (max-width: 550px) {
+    #registerpanel {
+        margin: 20px 10px;
+    }
+    #registerpanel .date {
+        float: left;
+    }
+
+    #registerpanel .date.year {
+        float: none;
+
+        width: 100%;
+        max-width: 10000px;
+    }
+
+    #registerpanel .date.month {
+        width: calc(100% - 60px);
+        margin: 0 10px 0 0;
+    }
+
+    #registerpanel .date.day {
+        max-width: 50px;
+    }
+}
+
+/* RESTAURANTS*/
+#restaurants-wrapper {
+    padding: 0 10px;
+    overflow-x: auto;
+}
+
+#restaurants-wrapper h2 {
+    font-weight: 300;
+    font-size: 1.6em;
+}
+
+#restaurants {
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+    min-width: 800px;
+}
+
+#restaurants .logo {
+    text-align: center;
+    width: 90px;
+    height: 90px;
+}
+
+#restaurants .logo img {
+    border-radius: 3px;
+    margin: 15px 15px 15px 5px;
+    height: 60px;
+    width: 60px;
+}
+
+#restaurants th, #restaurants td {
+    padding-left: 10px;
+}
+
+#restaurants .title {
+    font-weight: 300;
+    margin: 0;
+}
+
+#restaurants .cuisine {
+    margin: 5px 0 0;
+    font-size: .8em;
+    text-transform: lowercase;
+}
+
+#restaurants .opening {
+    text-align: center;
+}
+
+#restaurants .menu {
+    width: 200px;
+    padding-right: 10px;
+}
+
+#restaurants tbody tr:nth-child(even) .menu .button-view::after {
+    border-color: #eeeeee #eeeeee #eeeeee transparent;
+}
+
+#restaurants .opening-current p {
+    margin: 10px 0;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 1em;
+    border: 1px solid transparent;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+#restaurants .opening-current .open {
+    border-color: #00b894;
+    color: #00b894;
+}
+
+#restaurants .opening-current .close {
+    border-color: #d63031;
+    color: #d63031;
+}
+
+#restaurants .opening-hours {
+    text-align: center;
+}
+
+#restaurants .opening-hours p {
+    margin: 0;
+    font-weight: 300;
+}
+
+#restaurants .opening-hours .open {
+    font-size: 1.6em;
+}
+
+#restaurants .opening-hours .close {
+    font-size: 1.3em;
+}
+
+#restaurants .nonstop {
+    text-align: center;
+}
+
+#restaurants .nonstop p {
+    margin: 10px 0;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 1em;
+    color: #34495e;
+    border: 1px solid #34495e;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+#restaurants {
+    margin: 20px 0;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#restaurants thead tr {
+    background-color: #666666;
+    color: #FFFFFF;
+    padding: 0 10px;
+}
+
+#restaurants thead th {
+    line-height: 50px;
+    text-align: left;
+    font-weight: normal;
+}
+
+#restaurants tbody tr:nth-child(odd) {
+    background-color: #FFFFFF;
+}
+
+#restaurants tbody tr:nth-child(even) {
+    background-color: #eeeeee;
+}
+
+/* Restaurant Details */
+
+#restaurant-details-overlay {
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+}
+
+#restaurant-details-overlay .wrapper {
+    height: 100%;
+    padding: 0 10px;
+}
+
+#restaurant-details-overlay h2 {
+    display: inline-block;
+    text-align: left;
+    padding: 0;
+}
+
+#restaurant-details-details {
+    background-color: #666666;
+    color: #fff;
+    font-weight: 300;
+    line-height: 40px;
+}
+
+#restaurant-details-details .wrapper {
+    padding: 0 10px;
+}
+
+#restaurant-details-details ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#restaurant-details-details ul li {
+    line-height: 40px;
+    margin-right: 20px;
+    float: left;
+}
+
+#restaurant-details-details ul li i{
+    margin-right: 5px;
+}
+
+#restaurant-details-wrapper {
+    padding: 0 10px;
+    overflow-x: auto;
+}
+
+#restaurant-details-wrapper table {
+    border-radius: 3px;
+    overflow: hidden;
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    min-width: 850px;
+}
+
+#restaurant-details-wrapper caption {
+    background-color: #666666;
+    color: #FFFFFF;
+}
+
+#restaurant-details-wrapper caption h3 {
+    margin: 0;
+    font-size: 1em;
+    line-height: 50px;
+    text-align: left;
+    font-weight: normal;
+    padding: 0 10px;
+}
+
+#restaurant-details-wrapper tbody tr:nth-child(odd) {
+    background-color: #FFFFFF;
+}
+
+#restaurant-details-wrapper tbody tr:nth-child(even) {
+    background-color: #eeeeee;
+}
+
+#restaurant-details-wrapper .meal-image {
+    text-align: center;
+    width: 90px;
+    height: 90px;
+}
+
+#restaurant-details-wrapper .meal-image img {
+    border-radius: 3px;
+    margin: 15px 15px 15px 5px;
+    height: 60px;
+    width: 60px;
+}
+
+#restaurant-details-wrapper .meal-title h4 {
+    font-size: 1.1em;
+    font-weight: 300;
+    margin: 0;
+}
+
+#restaurant-details-wrapper .meal-title p {
+    margin: 10px 0 0;
+    font-size: .8em;
+    text-transform: lowercase;
+}
+
+#restaurant-details-wrapper .meal-price p {
+    margin: 10px 0;
+    border-radius: 3px;
+    display: inline-block;
+    padding: 10px 15px;
+    font-size: 1em;
+    color: #34495e;
+    border: 1px solid #34495e;
+    font-weight: 300;
+    text-align: center;
+}
+
+#restaurant-details-wrapper .meal-basket {
+    width: 200px;
+    padding-right: 10px;
+}
+
+#restaurant-details-wrapper tbody tr:nth-child(even) .meal-basket .button-view::after {
+    border-color: #eeeeee #eeeeee #eeeeee transparent;
+}
